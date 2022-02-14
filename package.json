@@ -1,5 +1,6 @@
 {
   "name": "bankproject",
+  "homepage": "https://alfredosdpiii.github.io/bankproject/",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
@@ -38,7 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
-    "homepage": "https://alfredosdpiii.github.io/bankproject/"
+    "gh-pages": "^3.2.3"
   }
 }
