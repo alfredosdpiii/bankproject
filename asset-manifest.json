@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bankproject/static/css/main.81ee6235.css",
-    "main.js": "/bankproject/static/js/main.69b68664.js",
+    "main.css": "/bankproject/static/css/main.8725f8bc.css",
+    "main.js": "/bankproject/static/js/main.0bc2201a.js",
     "static/js/787.14a8bf80.chunk.js": "/bankproject/static/js/787.14a8bf80.chunk.js",
     "index.html": "/bankproject/index.html",
-    "main.81ee6235.css.map": "/bankproject/static/css/main.81ee6235.css.map",
-    "main.69b68664.js.map": "/bankproject/static/js/main.69b68664.js.map",
+    "main.8725f8bc.css.map": "/bankproject/static/css/main.8725f8bc.css.map",
+    "main.0bc2201a.js.map": "/bankproject/static/js/main.0bc2201a.js.map",
     "787.14a8bf80.chunk.js.map": "/bankproject/static/js/787.14a8bf80.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.81ee6235.css",
-    "static/js/main.69b68664.js"
+    "static/css/main.8725f8bc.css",
+    "static/js/main.0bc2201a.js"
   ]
 }
