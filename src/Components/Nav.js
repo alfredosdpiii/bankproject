@@ -1,21 +1,49 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useTransactionContext } from "../States/TransactionContext";
+import { useLocation } from "react-router";
 import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+const Nav = () => {
+  const [{ user, isLoggedIn, expensesList, accounts }, dispatch] =
+    useTransactionContext();
+  useEffect(() => {
+    localStorage.setItem("Users", JSON.stringify(accounts));
+  }, [accounts]);
+  const pathLocation = useLocation();
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "SET_USER",
+      user: {},
+    });
+    dispatch({
+      type: "UPDATE_ACCOUNTS",
+      updatedUser: user,
+    });
+    // reset the expence list from state
+    dispatch({
+      type: "SET_EXPENSE_LIST",
+      expensesList: [],
+    });
+    dispatch({
+      type: "TOGGLE_LOGIN",
+      isLoggedIn: false,
+    });
+    localStorage.removeItem("User");
+  };
+  const navigation = [
+    { name: "Dashboard", current: true },
+    { name: "Logout", current: false },
+  ];
 
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  // { name: "Team", href: "#", current: false },
-  // { name: "Projects", href: "#", current: false },
-  { name: "Logout", href: "#", current: false },
-];
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-secondary">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -52,10 +80,11 @@ export default function Navbar() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white"
+                            ? "bg-primary text-black"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "px-3 py-2 rounded-md text-sm font-medium"
                         )}
+                        onClick={item.name === "Logout" ? logout : undefined}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
@@ -73,7 +102,7 @@ export default function Navbar() {
                 <Disclosure.Button
                   key={item.name}
                   as="a"
-                  href={item.href}
+                  onClick={item.name === "Logout" ? logout : undefined}
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
@@ -91,4 +120,6 @@ export default function Navbar() {
       )}
     </Disclosure>
   );
-}
+};
+
+export default Nav;

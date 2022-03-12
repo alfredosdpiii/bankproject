@@ -1,38 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-// let test = localStorage.getItem("bankdata");
-// let obj = {
-//   users: [
-//     {
-//       id: 1,
-//       firstName: "John",
-//       lastName: "Doe",
-//       email: "john@gmail.com",
-//       password: "1234",
-//       pin: "1234",
-//       balance: 500,
-//       expenses: [
-//         { expenseName: "Electricity bill", amount: 500, expenseID: 1 },
-//       ],
-//     },
-//     {
-//       id: 2,
-//       firstName: "Jane",
-//       lastName: "Doe",
-//       email: "jane@gmail.com",
-//       password: "4321",
-//       pin: "1234",
-//       balance: 1000,
-//       expenses: [],
-//     },
-//   ],
-// };
-// if (test == null) {
-//   localStorage.setItem("bankdata", JSON.stringify(obj));
-// }
+import "./Styles/index.css";
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

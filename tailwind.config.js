@@ -17,7 +17,22 @@ module.exports = {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      backgroundColor: {
+        navBg: "#0c005b",
+        cardBg: "#ffd301",
+        inputColor: "#f6f9fe",
+        tertiary: "#006699",
+      },
+      colors: {
+        primary: "#ffd301",
+        secondary: "#030081",
+      },
+      height: {
+        logoHeight: "15%",
+        footerHeight: "10%",
+      },
+    },
   },
   plugins: [],
 };
